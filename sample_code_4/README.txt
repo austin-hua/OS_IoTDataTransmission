@@ -1,4 +1,4 @@
-This is the source code of operating system project2.
+This is the source code of operating system project2. Note that this code is optimised for Linux 4.14.25
 
 ./master_device : the device moudule for master server
 ./slave_device  : the device moudule for slave client
