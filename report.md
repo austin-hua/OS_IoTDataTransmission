@@ -6,10 +6,10 @@ So the basic idea is, we're comparing the speed of mmap with normal file I/O.<br
 
 Master & Slave Description <br>
 #### Master
-
+This kernel program is designed to accept user program received and send it to the master device.
 
 #### Slave
-
+This kernel program is designed to receive data from the master device and transmit it to the user program.
 
 ### Execution Time Results
 #### mmap
