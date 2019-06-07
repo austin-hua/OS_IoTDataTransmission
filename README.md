@@ -2,8 +2,6 @@
 ### Operating Systems Project 2
 Implementation of memory pages and serial communication mechanisms
 
-Project description: http://rswiki.csie.org/dokuwiki/courses:107_2:project_2
-
 Group members: B06902101, B06902098, B06902086, B05902099
 
 ### Compilation
@@ -15,15 +13,17 @@ Navigate to our src folder. Execute compile.sh using any of the following comman
     sudo ./compile.sh<br>
     sh compile.sh</em>
 </p>
-If even as root user permission is still denied, you must execute *chmod +x compile.sh* to give root (or whatever your super username is) access to opening this file. For this reason, we recommend simply using the last command *sh* as it does not require adding extra permissions.
+If even as root user permission is still denied, you must execute <em>chmod +x compile.sh</em> to give root (or whatever your super username is) access to opening this file. For this reason, we recommend simply using the last command <em>sh</em> as it does not require adding extra permissions.
 
 ### Cool Reference Material
 <p>
+Project description: http://rswiki.csie.org/dokuwiki/courses:107_2:project_2<br>
+Char driver information: https://static.lwn.net/images/pdf/LDD3/ch03.pdf<br>
 https://askubuntu.com/questions/700214/how-do-i-install-an-old-kernel<br>
-https://github.com/yccyenchicheng/os_project2_sp18<br>
-https://github.com/b05902046/OS-Project-2<br>
-https://github.com/GaryChenMesser/os_project2_2018<br>
-https://github.com/nemotiger/OS-Project2
+Referenced Repo: https://github.com/yccyenchicheng/os_project2_sp18<br>
+Referenced Repo: https://github.com/b05902046/OS-Project-2<br>
+Referenced Repo: https://github.com/GaryChenMesser/os_project2_2018<br>
+Referenced Repo (linux 4.15.0-23-generic): https://github.com/nemotiger/OS-Project2
 </p>
 
 ### TODO
