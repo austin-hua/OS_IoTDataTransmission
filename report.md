@@ -18,7 +18,7 @@ Master & Slave Description <br>
 ## Analysis
 
 ### Contributions
-B06902101 韓哈斯: Designed program architecture, researched mmap, wrote report.md
-B06902098 李恩慈: 
-B06902086 柯燕玲: 
+B06902101 韓哈斯: Designed program architecture, researched mmap, wrote report.md<br>
+B06902098 李恩慈: <br>
+B06902086 柯燕玲: <br>
 B05902099 曾彬輝: 
