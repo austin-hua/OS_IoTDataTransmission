@@ -14,15 +14,14 @@ Navigate to our src folder. Execute compile.sh using any of the following comman
 If even as root user permission is still denied, you must execute <em>chmod +x compile.sh</em> to give root (or whatever your super username is) access to opening this file. For this reason, we recommend simply using the last command <em>sh</em> as it does not require adding extra permissions.
 
 ### Cool Reference Material
-<p>
-Project description: http://rswiki.csie.org/dokuwiki/courses:107_2:project_2<br>
-Char driver information: https://static.lwn.net/images/pdf/LDD3/ch03.pdf<br>
-https://askubuntu.com/questions/700214/how-do-i-install-an-old-kernel<br>
-Referenced Repo: https://github.com/yccyenchicheng/os_project2_sp18<br>
-Referenced Repo: https://github.com/b05902046/OS-Project-2<br>
-Referenced Repo: https://github.com/GaryChenMesser/os_project2_2018<br>
-Referenced Repo (linux 4.15.0-23-generic): https://github.com/nemotiger/OS-Project2
-</p>
+[Project description](http://rswiki.csie.org/dokuwiki/courses:107_2:project_2)<br>
+[Char driver information](https://static.lwn.net/images/pdf/LDD3/ch03.pdf)<br>
+[Switching kernel versions](https://askubuntu.com/questions/700214/how-do-i-install-an-old-kernel)<br>
+[mmap information](http://man7.org/linux/man-pages/man2/mmap.2.html)<br>
+[yccyenchicheng's repo](https://github.com/yccyenchicheng/os_project2_sp18)<br>
+[b05902046's repo](https://github.com/b05902046/OS-Project-2)<br>
+[GaryChenMesser's repo](https://github.com/GaryChenMesser/os_project2_2018)<br>
+[nemotiger's repo (running linux 4.15.0-23-generic)](https://github.com/nemotiger/OS-Project2)
 
 ### Group Members
 [B06902101 韓哈斯](https://github.com/Gearlad) <br>
