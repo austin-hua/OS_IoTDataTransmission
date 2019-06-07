@@ -19,10 +19,10 @@ If even as root user permission is still denied, you must execute *chmod +x comp
 
 ### Cool Reference Material
 <p>
-https://askubuntu.com/questions/700214/how-do-i-install-an-old-kernel
-https://github.com/yccyenchicheng/os_project2_sp18
-https://github.com/b05902046/OS-Project-2
-https://github.com/GaryChenMesser/os_project2_2018
+https://askubuntu.com/questions/700214/how-do-i-install-an-old-kernel<br>
+https://github.com/yccyenchicheng/os_project2_sp18<br>
+https://github.com/b05902046/OS-Project-2<br>
+https://github.com/GaryChenMesser/os_project2_2018<br>
 https://github.com/nemotiger/OS-Project2
 </p>
 
