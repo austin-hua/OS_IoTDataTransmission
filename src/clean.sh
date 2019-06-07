@@ -1,14 +1,11 @@
-cd ./ksocket
-make clean
-rmmod ksocket.ko
-cd ../master_device
-make clean
-rmmod master_device.ko
+cd master_device
+sudo make clean
 cd ../slave_device
-make clean
-rmmod slave_device.ko
+sudo make clean
+cd ../ksocket
+sudo make clean
 cd ../user_program
-make clean
+sudo make clean
 cd ..
 echo "Finished executing clean.sh" >&2
 
