@@ -9,5 +9,5 @@ make
 insmod slave_device.ko
 cd ../user_program
 make
-
+echo "Finished executing compile.sh" >&2
 

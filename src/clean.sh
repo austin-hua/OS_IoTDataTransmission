@@ -10,5 +10,5 @@ rmmod slave_device.ko
 cd ../user_program
 make clean
 cd ..
-
+echo "Finished executing clean.sh" >&2
 
