@@ -18,6 +18,7 @@ If even as root user permission is still denied, you must execute <em>chmod +x c
 [Char driver information](https://static.lwn.net/images/pdf/LDD3/ch03.pdf)<br>
 [Switching kernel versions](https://askubuntu.com/questions/700214/how-do-i-install-an-old-kernel)<br>
 [mmap information](http://man7.org/linux/man-pages/man2/mmap.2.html)<br>
+[more mmap information](https://www.poftut.com/mmap-tutorial-with-examples-in-c-and-cpp-programming-languages/)<br>
 [yccyenchicheng's repo](https://github.com/yccyenchicheng/os_project2_sp18)<br>
 [b05902046's repo](https://github.com/b05902046/OS-Project-2)<br>
 [GaryChenMesser's repo](https://github.com/GaryChenMesser/os_project2_2018)<br>
