@@ -15,11 +15,9 @@ sudo dpkg -i linux-headers-4.14* linux-image-4.14* <br>
 Restart, hold shift to open GRUB, and select the correct kernel.<br>
 
 Next switch to super user. Use the command <em>sudo -s</em>.
-Navigate to our src folder. Execute compile.sh using any of the following commands.
-<p><em>./compile.sh<br>
-    sudo ./compile.sh<br>
-    sh compile.sh</em>
-</p>
+Navigate to our src folder. Execute compile.sh using either of the following commands.
+[sudo] ./compile.sh<br>
+[sudo] sh compile.sh</em>
 If even as root user permission is still denied, you must execute <em>chmod +x compile.sh</em> to give root (or whatever your super username is) access to opening this file. For this reason, we recommend simply using the last command <em>sh</em> as it does not require adding extra permissions.<br>
 Afterwards, execute <em>lsmod</em>. The first three modules that appear should be slave_device, master_device, and ksocket. If this is not being displayed, the modules are not being compiled properly.<br>
 
