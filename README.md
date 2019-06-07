@@ -11,9 +11,9 @@ Before compiling, make sure you are running the correct version of kernel. We ar
 
 Next switch to super user. Use the command *sudo -s*.
 Navigate to our src folder. Execute compile.sh using any of the following commands.
-<p>*./compile.sh*<br>
-*sudo ./compile.sh*<br>
-*sh compile.sh*</p>
+<p> *./compile.sh*<br>
+    *sudo ./compile.sh*<br>
+    *sh compile.sh*</p>
 If even as root user permission is still denied, you must execute *chmod +x compile.sh* to give root (or whatever your super username is) access to opening this file. For this reason, we recommend simply using the last command *sh* as it does not require adding extra permissions.
 
 ### Cool Reference Material
