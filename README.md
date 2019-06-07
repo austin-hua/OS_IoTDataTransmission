@@ -2,10 +2,8 @@
 ### Operating Systems Project 2
 Implementation of memory pages and serial communication mechanisms
 
-Group members: B06902101, B06902098, B06902086, B05902099
-
 ### Compilation
-Before compiling, make sure you are running the correct version of kernel. We are using Kernel v. 4.14.25. You can check which version you are using with the command <em>uname -a</em>.
+Before compiling, make sure you are running the correct version of kernel. We are using Kernel v. 4.14.25. You can check which version you are using with the command <em>uname -a</em>. There are fundamental differences in certain ksocket functions between older kernel versions and 4.14.25 that make backwards compatibility impossible. Don't learn this the hard way.
 
 Next switch to super user. Use the command <em>sudo -s</em>.
 Navigate to our src folder. Execute compile.sh using any of the following commands.
@@ -24,6 +22,13 @@ Referenced Repo: https://github.com/yccyenchicheng/os_project2_sp18<br>
 Referenced Repo: https://github.com/b05902046/OS-Project-2<br>
 Referenced Repo: https://github.com/GaryChenMesser/os_project2_2018<br>
 Referenced Repo (linux 4.15.0-23-generic): https://github.com/nemotiger/OS-Project2
+</p>
+
+### Group Members
+<p>[B06902101 韓哈斯](https://github.com/Gearlad)<br>
+[B06902098 李恩慈](https://github.com/B06902098)<br>
+[B06902086 柯燕玲](https://github.com/swallow26)<br>
+[B05902099 曾彬輝](https://github.com/navenoc13)
 </p>
 
 ### TODO
