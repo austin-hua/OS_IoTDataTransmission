@@ -25,11 +25,10 @@ Referenced Repo (linux 4.15.0-23-generic): https://github.com/nemotiger/OS-Proje
 </p>
 
 ### Group Members
-<p>[B06902101 韓哈斯](https://github.com/Gearlad)<br>
-[B06902098 李恩慈](https://github.com/B06902098)<br>
-[B06902086 柯燕玲](https://github.com/swallow26)<br>
+[B06902101 韓哈斯](https://github.com/Gearlad) <br>
+[B06902098 李恩慈](https://github.com/B06902098) <br>
+[B06902086 柯燕玲](https://github.com/swallow26) <br>
 [B05902099 曾彬輝](https://github.com/navenoc13)
-</p>
 
 ### TODO
 <p>
@@ -38,5 +37,3 @@ Referenced Repo (linux 4.15.0-23-generic): https://github.com/nemotiger/OS-Proje
   Research mmap [ ]<br>
   Functional prototype [ ]
 </p>
-
-My favorite search engine is [Duck Duck Go](https://duckduckgo.com)
