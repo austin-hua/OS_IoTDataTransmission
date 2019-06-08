@@ -6,7 +6,7 @@ Implementation of memory pages and serial communication mechanisms
 Before compiling, make sure you are running the correct version of kernel. We are using Kernel v. 4.14.25. You can check which version you are using with the command <em>uname -r</em>. There are fundamental differences in certain ksocket functions between older kernel versions and 4.14.25 that make backwards compatibility impossible. Don't learn this the hard way. Also, install the *libelf-dev*, *libncurses5-dev*, and *libssl-dev* packages to be able to run compile.sh.
 
 (This part is for team 11 reference)
-If you don't have this kernel version, run the following commands (as 4.14.25 can't be obtained from apt-get - you could also just use the procedure described in HW1).
+If you don't have this kernel version, run the following commands (as 4.14.25 can't be obtained from apt-get - you could also just use the procedure described in HW1).<br>
 wget https://kernel.ubuntu.com/~kernel-ppa/mainline/v4.14.25/linux-headers-4.14.25-041425-generic_4.14.25-041425.201803091130_amd64.deb<br>
 wget https://kernel.ubuntu.com/~kernel-ppa/mainline/v4.14.25/linux-headers-4.14.25-041425_4.14.25-041425.201803091130_all.deb<br>
 wget https://kernel.ubuntu.com/~kernel-ppa/mainline/v4.14.25/linux-image-4.14.25-041425-generic_4.14.25-041425.201803091130_amd64.deb<br>
@@ -22,11 +22,10 @@ Navigate to our src folder. Execute compile.sh using either of the following com
 If even as root user permission is still denied, you must execute <em>chmod +x compile.sh</em> to give root (or whatever your super username is) access to opening this file. For this reason, we recommend simply using the last command <em>sh</em> as it does not require adding extra permissions.<br>
 Afterwards, execute <em>lsmod</em>. The first three modules that appear should be slave_device, master_device, and ksocket. If this is not displayed, the modules are not being compiled properly.<br>
 
-
 ### Execution
-After you are finish compiling, run these shell files.
+After you are finish compiling, run these shell files.<br>
 <em>generate.sh</em><br>
-This file will create all data needed. 
+This file will create all data needed.
 
 ### Post-Execution
 <em>clean.sh</em><br>
