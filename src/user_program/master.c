@@ -12,7 +12,12 @@
 #define PAGE_SIZE 4096
 #define BUF_SIZE 512
 
-size_t get_filesize(const char* filename);//get input file size
+size_t get_filesize(const char* filename) //input file size
+{
+    struct stat st;
+    stat(filename, &st);
+    return st.st_size;
+}
 
 int main (int argc, char* argv[])
 {
@@ -23,8 +28,7 @@ int main (int argc, char* argv[])
 	char *kernel_address = NULL, *file_address = NULL;
 	struct timeval start;
 	struct timeval end;
-	double trans_time; //calulate the time between the device is opened and it is closed
-	void *our_map;
+	double trans_time; //calulate time interval of device being opened to device being closed
 
 	strcpy(file_name, argv[1]);
 	strcpy(method, argv[2]);
@@ -77,16 +81,17 @@ int main (int argc, char* argv[])
 				return -1;
 			}
 
-			ret = file_size; //?
-
+			int data_size = file_size;
+			//ssize_t write(int fd, const void *buf, size_t count);
 			do {
-				if(ret >= 512) {
-					
+				int write_location = mmapper + file_size - ret;
+				if(data_size >= BUF_SIZE) {
+					write(dev_fd, write_location, BUF_SIZE);
+				} else {
+					write(dev_fd, write_location, ret);
 				}
-			}
-
-
-
+				ret -= BUF_SIZE;
+			} while(ret > 0); //end of file
 
 			//int munmap(void *addr, size_t length);
 			if(munmap(mmapper, file_size) == -1) {
@@ -96,11 +101,12 @@ int main (int argc, char* argv[])
 			break;
 	}
 
-	if(ioctl(dev_fd, 0x12345679) == -1) // end sending data, close the connection
-	{
-		perror("ioclt server exits error\n");
+	// end sending data, close the connection
+	if(ioctl(dev_fd, 0x12345679) == -1) {
+		perror("ioclt server exit error\n");
 		return 1;
 	}
+
 	gettimeofday(&end, NULL);
 	trans_time = (end.tv_sec - start.tv_sec)*1000 + (end.tv_usec - start.tv_usec)*0.0001;
 	printf("Transmission time: %lf ms, File size: %d bytes\n", trans_time, file_size / 8);
@@ -109,11 +115,4 @@ int main (int argc, char* argv[])
 	close(dev_fd);
 
 	return 0;
-}
-
-size_t get_filesize(const char* filename)
-{
-    struct stat st;
-    stat(filename, &st);
-    return st.st_size;
 }
