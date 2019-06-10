@@ -9,8 +9,9 @@
 #include <sys/types.h>
 #include <sys/time.h>
 
-#define PAGE_SIZE 4096
+#define PAGE_SIZE 4096 //4 kb
 #define BUF_SIZE 512
+
 int main (int argc, char* argv[])
 {
 	char buf[BUF_SIZE];
@@ -29,25 +30,28 @@ int main (int argc, char* argv[])
 	strcpy(method, argv[2]);
 	strcpy(ip, argv[3]);
 
-	if( (dev_fd = open("/dev/slave_device", O_RDWR)) < 0)//should be O_RDWR for PROT_WRITE when mmap()
-	{
+	//should be O_RDWR for PROT_WRITE when mmap()
+	if((dev_fd = open("/dev/slave_device", O_RDWR)) < 0) {
 		perror("failed to open /dev/slave_device\n");
 		return 1;
 	}
-	gettimeofday(&start ,NULL);
-	if( (file_fd = open (file_name, O_RDWR | O_CREAT | O_TRUNC)) < 0)
-	{
+
+	gettimeofday(&start, NULL);
+
+	if((file_fd = open(file_name, O_RDWR | O_CREAT | O_TRUNC)) < 0) {
 		perror("failed to open input file\n");
 		return 1;
 	}
 
-	if(ioctl(dev_fd, 0x12345677, ip) == -1)	//0x12345677 : connect to master in the device
-	{
-		perror("ioclt create slave socket error\n");
+	//0x12345677 : connect to master in the device
+	if(ioctl(dev_fd, 0x12345677, ip) == -1) {
+		perror("ioctl create slave socket error\n");
 		return 1;
 	}
 
     write(1, "ioctl success\n", 14);
+    
+    char *mmapper;
 
 	switch(method[0])
 	{
@@ -59,19 +63,24 @@ int main (int argc, char* argv[])
 				file_size += ret;
 			}while(ret > 0);
 			break;
+		default: //mmap
+			do {
+
+			}
+
 	}
 
 
 
-	if(ioctl(dev_fd, 0x12345679) == -1)// end receiving data, close the connection
-	{
+
+	// end receiving data, close the connection
+	if(ioctl(dev_fd, 0x12345679) == -1) {
 		perror("ioclt client exits error\n");
 		return 1;
 	}
 	gettimeofday(&end, NULL);
 	trans_time = (end.tv_sec - start.tv_sec)*1000 + (end.tv_usec - start.tv_usec)*0.0001;
 	printf("Transmission time: %lf ms, File size: %d bytes\n", trans_time, file_size / 8);
-
 
 	close(file_fd);
 	close(dev_fd);

@@ -32,9 +32,9 @@
 
 typedef struct socket * ksocket_t;
 
-struct dentry  *file1;//debug file
+struct dentry *file1; //debug file
 
-//functions about kscoket are exported, and thus we use extern here
+//functions for ksocket are exported, and so we use extern here
 extern ksocket_t ksocket(int domain, int type, int protocol);
 extern int kbind(ksocket_t socket, struct sockaddr *address, int address_len);
 extern int klisten(ksocket_t socket, int backlog);
@@ -49,14 +49,14 @@ static void __exit master_exit(void);
 int master_close(struct inode *inode, struct file *filp);
 int master_open(struct inode *inode, struct file *filp);
 static long master_ioctl(struct file *file, unsigned int ioctl_num, unsigned long ioctl_param);
-static ssize_t send_msg(struct file *file, const char __user *buf, size_t count, loff_t *data);//use when user is writing to this device
+static ssize_t send_msg(struct file *file, const char __user *buf, size_t count, loff_t *data); //used when user is writing to this device
 
-static ksocket_t sockfd_srv, sockfd_cli;//socket for master and socket for slave
-static struct sockaddr_in addr_srv;//address for master
-static struct sockaddr_in addr_cli;//address for slave
+static ksocket_t sockfd_srv, sockfd_cli; //socket for master and socket for slave
+static struct sockaddr_in addr_srv; //address for master
+static struct sockaddr_in addr_cli; //address for slave
 static mm_segment_t old_fs;
 static int addr_len;
-//static  struct mmap_info *mmap_msg; // pointer to the mapped data in this device
+//static struct mmap_info *mmap_msg; // pointer to the mapped data in this device
 
 //file operations
 static struct file_operations master_fops = {
@@ -80,7 +80,7 @@ static int __init master_init(void)
 	file1 = debugfs_create_file("master_debug", 0644, NULL, NULL, &master_fops);
 
 	//register the device
-	if( (ret = misc_register(&master_dev)) < 0){
+	if((ret = misc_register(&master_dev)) < 0) {
 		printk(KERN_ERR "misc_register failed!\n");
 		return ret;
 	}
@@ -101,21 +101,20 @@ static int __init master_init(void)
 
 	sockfd_srv = ksocket(AF_INET, SOCK_STREAM, 0);
 	printk("sockfd_srv = 0x%p  socket is created \n", sockfd_srv);
-	if (sockfd_srv == NULL)
-	{
+
+	if (sockfd_srv == NULL) {
 		printk("socket failed\n");
 		return -1;
 	}
-	if (kbind(sockfd_srv, (struct sockaddr *)&addr_srv, addr_len) < 0)
-	{
+	if (kbind(sockfd_srv, (struct sockaddr *)&addr_srv, addr_len) < 0) {
 		printk("bind failed\n");
 		return -1;
 	}
-	if (klisten(sockfd_srv, 10) < 0)
-	{
+	if (klisten(sockfd_srv, 10) < 0) {
 		printk("listen failed\n");
 		return -1;
 	}
+
     printk("master_device init OK\n");
 	set_fs(old_fs);
 	return 0;
@@ -125,26 +124,18 @@ static void __exit master_exit(void)
 {
 	misc_deregister(&master_dev);
     printk("misc_deregister\n");
-	if(kclose(sockfd_srv) == -1)
-	{
+	if(kclose(sockfd_srv) == -1) {
 		printk("kclose srv error\n");
-		return ;
+		return;
 	}
 	set_fs(old_fs);
 	printk(KERN_INFO "master exited!\n");
 	debugfs_remove(file1);
 }
 
-int master_close(struct inode *inode, struct file *filp)
-{
-	return 0;
-}
+int master_close(struct inode *inode, struct file *filp) { return 0; }
 
-int master_open(struct inode *inode, struct file *filp)
-{
-	return 0;
-}
-
+int master_open(struct inode *inode, struct file *filp) { return 0; }
 
 static long master_ioctl(struct file *file, unsigned int ioctl_num, unsigned long ioctl_param)
 {
@@ -161,13 +152,12 @@ static long master_ioctl(struct file *file, unsigned int ioctl_num, unsigned lon
 	switch(ioctl_num){
 		case master_IOCTL_CREATESOCK:// create socket and accept a connection
 			sockfd_cli = kaccept(sockfd_srv, (struct sockaddr *)&addr_cli, &addr_len);
-			if (sockfd_cli == NULL)
-			{
+			if(sockfd_cli == NULL) {
 				printk("accept failed\n");
 				return -1;
-			}
-			else
+			} else {
 				printk("aceept sockfd_cli = 0x%p\n", sockfd_cli);
+			}
 
 			tmp = inet_ntoa(&addr_cli.sin_addr);
 			printk("got connected from : %s %d\n", tmp, ntohs(addr_cli.sin_port));
@@ -177,8 +167,7 @@ static long master_ioctl(struct file *file, unsigned int ioctl_num, unsigned lon
 		case master_IOCTL_MMAP:
 			break;
 		case master_IOCTL_EXIT:
-			if(kclose(sockfd_cli) == -1)
-			{
+			if(kclose(sockfd_cli) == -1) {
 				printk("kclose cli error\n");
 				return -1;
 			}
@@ -199,6 +188,7 @@ static long master_ioctl(struct file *file, unsigned int ioctl_num, unsigned lon
 	set_fs(old_fs);
 	return ret;
 }
+
 static ssize_t send_msg(struct file *file, const char __user *buf, size_t count, loff_t *data)
 {
 //call when user is writing to this device
@@ -210,8 +200,6 @@ static ssize_t send_msg(struct file *file, const char __user *buf, size_t count,
 	return count;
 
 }
-
-
 
 
 module_init(master_init);
