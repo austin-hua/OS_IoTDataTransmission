@@ -44,11 +44,17 @@ This will be useful for testing in different environments. The three modules, sl
 [Char driver information](https://static.lwn.net/images/pdf/LDD3/ch03.pdf)<br>
 [Switching kernel versions](https://askubuntu.com/questions/700214/how-do-i-install-an-old-kernel)<br>
 [mmap information](http://man7.org/linux/man-pages/man2/mmap.2.html)<br>
+[Bash reference material 1](https://stackoverflow.com/questions/9612090/how-to-loop-through-file-names-returned-by-find/9612232)<br>
+[Bash reference material 2](https://www.cyberciti.biz/faq/bash-for-loop/)<br>
+[Bash reference material 3](https://unix.stackexchange.com/questions/346388/can-i-find-all-files-with-the-log-extension-and-order-by-file-size)<br>
 [more mmap information](https://www.poftut.com/mmap-tutorial-with-examples-in-c-and-cpp-programming-languages/)<br>
+*Referenced repos*
+[GaryChenMesser's repo (compatible with Linux 4.14.25-generic)](https://github.com/GaryChenMesser/os_project2_2018)<br>
 [yccyenchicheng's repo](https://github.com/yccyenchicheng/os_project2_sp18)<br>
 [b05902046's repo](https://github.com/b05902046/OS-Project-2)<br>
-[GaryChenMesser's repo (compatible with Linux 4.14.25-generic)](https://github.com/GaryChenMesser/os_project2_2018)<br>
-[nemotiger's repo (running Linux 4.15.0-23-generic)](https://github.com/nemotiger/OS-Project2)
+[nemotiger's repo (running Linux 4.15.0-23-generic)](https://github.com/nemotiger/OS-Project2)<br>
+[qazwsxedcrfvtg14's repo](https://github.com/qazwsxedcrfvtg14/OS-Proj2)<br>
+[MarvinChung's repo](https://github.com/MarvinChung/os_project1/tree/master/os_project2)<br>
 
 ### Group Members
 [B06902101 韓哈斯](https://github.com/Gearlad) <br>
