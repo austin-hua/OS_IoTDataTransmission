@@ -12,6 +12,10 @@
 #define PAGE_SIZE 4096 //4 kb
 #define BUF_SIZE 512
 
+#define slave_IOCTL_CREATESOCK 0x12345677
+#define slave_IOCTL_MMAP 0x12345678
+#define slave_IOCTL_EXIT 0x12345679
+
 int main (int argc, char* argv[])
 {
 	char buf[BUF_SIZE];
@@ -50,31 +54,64 @@ int main (int argc, char* argv[])
 	}
 
     write(1, "ioctl success\n", 14);
-    
-    char *mmapper;
+
+    //char *mmapper;
 
 	switch(method[0])
 	{
-		case 'f'://fcntl : read()/write()
-			do
-			{
+		case 'f': //fcntl : read()/write()
+			do {
 				ret = read(dev_fd, buf, sizeof(buf)); // read from the the device
 				write(file_fd, buf, ret); //write to the input file
 				file_size += ret;
-			}while(ret > 0);
-			break;
-		default: //mmap
-			do {
+			} while(ret > 0);
 
+			break;
+
+		default: //mmap
+			/*mmapper = mmap(NULL, file_size, PROT_READ, MAP_SHARED, file_fd, 0);
+
+			if(mmapper == MAP_FAILED) {
+				perror("mmap creation failed\n");
+				return -1;
+			}*/
+
+			while(1) {
+
+				ret = ioctl(dev_fd, slave_IOCTL_MMAP);
+
+				if(ret == 0) { // success return value
+					file_size = offset;
+					break;
+				}
+
+				if(ret == -1) {
+					perror("ioctl failed");
+					return -1;
+				}
+
+				//Function parameters: int posix_fallocate(int fd, off_t offset, off_t len);
+				posix_fallocate(file_fd, offset, ret); //ensure disk space allocation for file_fd
+				file_address = mmap(NULL, ret, PROT_WRITE, MAP_SHARED, file_fd, offset);
+				kernel_address = mmap(NULL, ret, PROT_READ, MAP_SHARED, dev_fd, offset);
+
+				memcpy(file_address, kernel_address, ret);
+				offset += ret;
 			}
 
+			//int ioctl(int fd, unsigned long request, ...);
+			unsigned long long request = 7122;
+			ioctl(dev_fd, request);
+
+			/*if(munmap(mmapper, file_size) == -1) {
+				perror("unmapping failed\n");
+				return -1;
+			}*/
 	}
 
 
-
-
 	// end receiving data, close the connection
-	if(ioctl(dev_fd, 0x12345679) == -1) {
+	if(ioctl(dev_fd, slave_IOCTL_EXIT) == -1) {
 		perror("ioclt client exits error\n");
 		return 1;
 	}

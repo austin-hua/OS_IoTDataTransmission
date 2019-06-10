@@ -57,7 +57,7 @@ int main (int argc, char* argv[])
 		return 1;
 	}
 
-	void *mmapper;
+	char *mmapper;
 
 	switch(method[0]) {
 		case 'f': //file I/O
