@@ -1,6 +1,12 @@
 # IoT Data Transmission
-### Operating Systems Project 2
-Implementation of memory pages and serial communication mechanisms
+*Implementation of memory pages and serial communication mechanisms*<br>
+
+### Program Architecture
+./master_device : device module for master server
+./slave_device  : device module for slave client
+./ksocket: device module for kernel socket
+./data   : input/output data
+./user_program : user program "master" and "slave"
 
 ### Pre-Compilation
 Before compiling, make sure you are running the correct version of kernel. We are using Kernel v. 4.14.25. You can check which version you are using with the command <em>uname -r</em>. There are fundamental differences in certain ksocket functions between older kernel versions and 4.14.25 that make backwards compatibility impossible. Don't learn this the hard way. Also, install the *libelf-dev*, *libncurses5-dev*, and *libssl-dev* packages to be able to run compile.sh.
@@ -54,6 +60,6 @@ This will be useful for testing in different environments. The three modules, sl
 <p>
   Add sample source code and base files [✓]<br>
   Test source code [✓]<br>
-  Research mmap [ ]<br>
+  Research mmap [✓]<br>
   Functional prototype [ ]<br>
 </p>

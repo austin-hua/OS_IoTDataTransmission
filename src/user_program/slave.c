@@ -100,7 +100,7 @@ int main (int argc, char* argv[])
 			}
 
 			//int ioctl(int fd, unsigned long request, ...);
-			unsigned long long request = 7122;
+			unsigned long request = 7122;
 			ioctl(dev_fd, request);
 
 			/*if(munmap(mmapper, file_size) == -1) {
