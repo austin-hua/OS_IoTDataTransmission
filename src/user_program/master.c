@@ -57,8 +57,6 @@ int main (int argc, char* argv[])
 		return 1;
 	}
 
-	char *kernel_address;
-
 	switch(method[0]) {
 		case 'f': //file I/O
 			do {
