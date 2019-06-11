@@ -1,11 +1,12 @@
-cd master_device
-sudo make clean
+cd ./master_device
+make clean
 cd ../slave_device
-sudo make clean
+make clean
 cd ../ksocket
-sudo make clean
+make clean
 cd ../user_program
-sudo make clean
+make clean
 cd ..
+sudo sh removeModules.sh
 echo "Finished executing clean.sh" >&2
 
