@@ -2,10 +2,10 @@
 *Implementation of memory pages and serial communication mechanisms*<br>
 
 ### Program Architecture
-./master_device : device module for master server
-./slave_device  : device module for slave client
-./ksocket: device module for kernel socket
-./data   : input/output data
+./master_device : device module for master server<br>
+./slave_device  : device module for slave client<br>
+./ksocket: device module for kernel socket<br>
+./data   : input/output data<br>
 ./user_program : user program "master" and "slave"
 
 ### Pre-Compilation
