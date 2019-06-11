@@ -123,8 +123,8 @@ int main (int argc, char* argv[])
 			offset += ret;
 		}
 
-		msync(mmapped, PAGE_SIZE, MS_ASYNC);
-		munmap(mmapped, PAGE_SIZE);
+		msync(kernel_address, PAGE_SIZE, MS_ASYNC);
+		munmap(kernel_address, PAGE_SIZE);
 		//following second format: int ftruncate(int fd, off_t length);
 		ftruncate(file_fd, file_size);
 	}
