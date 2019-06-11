@@ -22,7 +22,6 @@ This kernel program is designed to receive data from the master device and trans
 
 
 
-
 ## Weaknesses in This Analysis
 We have tried finding a consistently reliable method for unloading modules, including the provided sample code version as well as several other methods. Mutual module dependency for ksocket and master_device have made it difficult to have 100% success, however, even with the risky *rmmod -f* command. If these modules can't be unloaded, rebooting Ubuntu is the fallback.
 

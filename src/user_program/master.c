@@ -12,18 +12,12 @@
 #define PAGE_SIZE 4096
 #define BUF_SIZE 512
 
-size_t get_filesize(const char* filename) //input file size
-{
-    struct stat st;
-    stat(filename, &st);
-    return st.st_size;
-}
+size_t get_filesize(const char* filename); //input file size
 
-int main (int argc, char* argv[])
-{
+int main (int argc, char* argv[]) {
 	char buf[BUF_SIZE];
-	int i, dev_fd, file_fd;// the fd for the device and the fd for the input file
-	size_t ret, file_size, tmp, offset = 0;
+	int i, dev_fd, file_fd, ret;// the fd for the device and the fd for the input file
+	size_t file_size, tmp, offset = 0;
 	char file_name[50], method[20];
 	char *kernel_address = NULL, *file_address = NULL;
 	struct timeval start;
@@ -39,7 +33,7 @@ int main (int argc, char* argv[])
 		return 1;
 	}
 
-	gettimeofday(&start ,NULL);
+	gettimeofday(&start, NULL);
 
 	if((file_fd = open(file_name, O_RDWR)) < 0) {
 		perror("Error opening input file\n");
@@ -65,10 +59,10 @@ int main (int argc, char* argv[])
 			} while(ret > 0);
 			break;
 
-		default: //mmap
+		case 'm':
 			//void *mmap(void *addr, size_t length, int prot, int flags, int fd, off_t offset);
 			//can use map_shared or map_private
-			kernel_address = mmap(NULL, file_size, PROT_READ, MAP_SHARED, file_fd, 0);
+			kernel_address = mmap(NULL, file_size, PROT_READ, MAP_PRIVATE | MAP_POPULATE, file_fd, 0);
 			/*
 			On success, mmap() returns a pointer to the mapped area.  On error,
 	       	the value MAP_FAILED (that is, (void *) -1) is returned, and errno is
@@ -79,11 +73,11 @@ int main (int argc, char* argv[])
 				return -1;
 			}
 
-			int data_size = file_size;
+			ret = file_size;
 			//ssize_t write(int fd, const void *buf, size_t count);
 			do {
 				int write_location = kernel_address + file_size - ret;
-				if(data_size >= BUF_SIZE) {
+				if(ret >= BUF_SIZE) {
 					write(dev_fd, write_location, BUF_SIZE);
 				} else {
 					write(dev_fd, write_location, ret);
@@ -113,4 +107,11 @@ int main (int argc, char* argv[])
 	close(dev_fd);
 
 	return 0;
+}
+
+size_t get_filesize(const char* filename)
+{
+    struct stat st;
+    stat(filename, &st);
+    return st.st_size;
 }
