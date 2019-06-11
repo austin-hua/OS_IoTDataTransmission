@@ -14,16 +14,7 @@ This kernel program is designed to accept user program received and send it to t
 #### Slave
 This kernel program is designed to receive data from the master device and transmit it to the user program. This program will only be executed after both slave_device and master_device are loaded. The slave program is responsible for setting the master IP address to connect to. The slave device will receive data from the master device, which in turn will return this data to the slave program.
 
-### Execution Time Results
-#### mmap
-#### File I/O
-
 ## Analysis
-
-
-
-
-
 
 ## Weaknesses in This Analysis
 We have tried finding a consistently reliable method for unloading modules, including the provided sample code version as well as several other methods. Mutual module dependency for ksocket and master_device have made it difficult to have 100% success, however, even with the risky *rmmod -f* command. If these modules can't be unloaded, rebooting Ubuntu is the fallback.
