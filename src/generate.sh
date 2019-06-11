@@ -1,13 +1,12 @@
-if [[ $1 = f ]]
+if [ $1 = m ]
 then
-	func = f
+	method=m
 else 
-	func = m
+	method=f
 fi
-
-addr=127.0.0.1
-
-for input_file in *.in; do
-	sudo ./user_program/master $input_file $func &
-		sudo ./user_program/slave $input_file.out $func addr
+echo "method used: $method" >&2
+for input_file in `find ./data -name *.in`
+do
+	sudo ./user_program/master $input_file $method &
+		sudo ./user_program/slave $input_file.out $method `hostname -i`
 done;

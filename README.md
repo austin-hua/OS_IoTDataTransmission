@@ -77,5 +77,5 @@ Architecture
 	clean.sh functional [✓]
 	removeModules.sh functional [✓]
 	compile.sh functional [✓]
-	generate.sh functional []
+	generate.sh functional [✓]
 </p>
