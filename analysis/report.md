@@ -12,6 +12,9 @@ This kernel program is designed to accept user program received and send it to t
 #### Slave
 This kernel program is designed to receive data from the master device and transmit it to the user program. This program will only be executed after both slave_device and master_device are loaded. The slave program is responsible for setting the master IP address to connect to. The slave device will receive data from the master device, which in turn will return this data to the slave program.
 
+#### Ubuntu ksocket description
+Seeing from the perspective that Linux is an open source software, it is already performing better than Windows. Now we introduce ksocket which adds us the advantage of using Ubuntu. Ksocket is the same concept as 3环 concept.
+
 ## Analysis
 Time is measured in ms.<br>
 f and m are file I/O and mmap, as they are referred to in the source code.<br>
