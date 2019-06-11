@@ -1,4 +1,4 @@
-# Project Report
+v# Project Report
 
 ## Design
 The entire framework runs on Linux's mmap (memory map) library. mmap is pretty much a function for allocating memory on the heap. It's called by C's malloc() function, for example. Cool stuff. It is an essential system call for a variety of programming applications. <br>
@@ -17,7 +17,7 @@ This kernel program is designed to receive data from the master device and trans
 
 ## Analysis
 
-Dataset 1
+### Dataset 1
  File Size|Master(f)|Slave (f)|Master(m)| Slave (m)
 |---------|---------|---------|---------|--------| 
 | 4       | 0.618   | 0.32    | 0.0742  | 0.0519 | 
@@ -25,7 +25,7 @@ Dataset 1
 | 1502860 | 13.7193 | 13.7708 | 5.0837  | 4.7855 | 
 | 577     | 18.9267 | 18.76   | 0.1427  | 0.0399 | 
 
-Dataset 2
+### Dataset 2
 |File size (in bytes, sample input, .in extension)|Master (method f)|Slave (method f)|Master (method m)|Slave (method m)|
 |-------------------------------------------------|-----------------|----------------|-----------------|----------------|
 |4                                                |0.3081           |0.22            |0.1369           |0.0547          |
@@ -33,7 +33,8 @@ Dataset 2
 |1502860                                          |4.3947           |5.6345          |2.7322           |8.815           |
 |577                                              |0.3103           |0.2322          |0.8319           |0.0502          |
 
-Dataset 3
+
+### Dataset 3
 |File size (in bytes, sample input, .in extension)|Master (method f)|Slave (method f)|Master (method m)|Slave (method m)|
 |-------------------------------------------------|-----------------|----------------|-----------------|----------------|
 |4                                                |0.0271           |0.0323          |0.022            |0.5452          |
@@ -41,7 +42,8 @@ Dataset 3
 |1502860                                          |6.1279           |13.0579         |6.7043           |9.7628          |
 |577                                              |0.0234           |0.21            |0.2434           |0.0715          |
 
-Dataset 4
+
+### Dataset 4
 |File size (in bytes, sample input, .in extension)|Master (method f)|Slave (method f)|Master (method m)|Slave (method m)|
 |-------------------------------------------------|-----------------|----------------|-----------------|----------------|
 |4                                                |0.0618           |0.0605          |0.0317           |0.0468          |
@@ -49,7 +51,8 @@ Dataset 4
 |1502860                                          |8.2803           |13.3495         |7.7723           |12.6573         |
 |577                                              |0.342            |0.1962          |2.1817           |0.7895          |
 
-Dataset 5
+
+### Dataset 5
 |File size (in bytes, sample input, .in extension)|Master (method f)|Slave (method f)|Master (method m)|Slave (method m)|
 |-------------------------------------------------|-----------------|----------------|-----------------|----------------|
 |4                                                |0.7712           |0.2513          |0.4338           |1.6079          |
