@@ -22,6 +22,14 @@ This kernel program is designed to receive data from the master device and trans
 | 1502860 | 13.7193 | 13.7708 | 5.0837  | 4.7855 | 
 | 577     | 18.9267 | 18.76   | 0.1427  | 0.0399 | 
 
+|                                                   |                   |                  |                   |                  | 
+|---------------------------------------------------|-------------------|------------------|-------------------|------------------| 
+| File size (in bytes, sample input, .in extension) | Master (method f) | Slave (method f) | Master (method m) | Slave (method m) | 
+| 4                                                 | 0.3081            | 0.22             | 0.1369            | 0.0547           | 
+| 9695                                              | 0.08              | 0.2076           | 0.1649            | 0.1853           | 
+| 1502860                                           | 4.3947            | 5.6345           | 2.7322            | 8.815            | 
+| 577                                               | 0.3103            | 0.2322           | 0.8319            | 0.0502           | 
+
 
 ## Weaknesses in This Analysis
 We have tried finding a consistently reliable method for unloading modules, including the provided sample code version as well as several other methods. Mutual module dependency for ksocket and master_device have made it difficult to have 100% success, however, even with the risky *rmmod -f* command. If these modules can't be unloaded, rebooting Ubuntu is the fallback.
