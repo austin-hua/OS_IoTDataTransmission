@@ -7,8 +7,8 @@ In this experiment, we converted the files provided in the sample code (file_in)
 
 
 
-## Master & Slave Description <br>
-Master/Slave is a model of communication where the Master process has control over the Slave process(es). <br>
+## Master & Slave Description
+Master/Slave is a model of communication where the Master process has control over the Slave process(es). 
 #### Master
 This kernel program is designed to accept user program received and send it to the master device. The master program will be loaded after the master_module is loaded.
 
@@ -23,12 +23,12 @@ File size is measured in bytes. As specified in the source code, PAGE_SIZE is 40
 
 
 ### Dataset 1
- File Size|Master(f)|Slave (f)|Master(m)| Slave (m)
-|---------|---------|---------|---------|--------| 
-| 4       | 0.618   | 0.32    | 0.0742  | 0.0519 | 
-| 9695    | 1.3312  | 0.6381  | 0.4087  | 0.1012 | 
-| 1502860 | 13.7193 | 13.7708 | 5.0837  | 4.7855 | 
-| 577     | 18.9267 | 18.76   | 0.1427  | 0.0399 | 
+|File size (in bytes, sample input, .in extension)|Master (method f)|Slave (method f)|Master (method m)|Slave (method m)|
+|-------------------------------------------------|-----------------|----------------|-----------------|----------------|
+| 4                                               | 0.618           | 0.32           | 0.0742           | 0.0519         | 
+| 9695                                            | 1.3312          | 0.6381         | 0.4087           | 0.1012         | 
+| 1502860                                         | 13.7193         | 13.7708        | 5.0837           | 4.7855         | 
+| 577                                             | 18.9267         | 18.76          | 0.1427           | 0.0399         | 
 
 ### Dataset 2
 |File size (in bytes, sample input, .in extension)|Master (method f)|Slave (method f)|Master (method m)|Slave (method m)|
