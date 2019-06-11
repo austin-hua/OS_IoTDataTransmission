@@ -6,7 +6,6 @@ The entire framework runs on Linux's mmap (memory map) library. mmap is pretty m
 In this experiment, we converted the files provided in the sample code (file_in) to .in files. Our program is designed to read all '.in' files located in the ./data library. The corresponding '.out' file is generated upon data transmission.
 
 ### Master & Slave Description
-Master/Slave is a model of communication where the Master process has control over the Slave process(es). 
 #### Master
 This kernel program is designed to accept user program received and send it to the master device. The master program will be loaded after the master_module is loaded.
 
