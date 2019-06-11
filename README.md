@@ -49,8 +49,9 @@ This will be useful for testing in different environments. The three modules, sl
 [Bash reference material 3](https://unix.stackexchange.com/questions/346388/can-i-find-all-files-with-the-log-extension-and-order-by-file-size)<br>
 [more mmap information](https://www.poftut.com/mmap-tutorial-with-examples-in-c-and-cpp-programming-languages/)<br>
 *Referenced repos*<br>
+[file I/O vs mmap](https://stackoverflow.com/questions/5588605/mmap-vs-read)<br>
 [GaryChenMesser's repo (compatible with Linux 4.14.25-generic)](https://github.com/GaryChenMesser/os_project2_2018)<br>
-Acknowledgement: After running into several errors using multiple different implementations of mmap, we reviewed and based much of our current mmap implementation on the above implementation.<br>
+Acknowledgement: After running into several errors using multiple different implementations of mmap, we reviewed and based much of our current mmap implementation on the above implementation. We have also reviewed, tried, and implemented code from these other repositories.<br>
 [yccyenchicheng's repo](https://github.com/yccyenchicheng/os_project2_sp18)<br>
 [b05902046's repo](https://github.com/b05902046/OS-Project-2)<br>
 [nemotiger's repo (running Linux 4.15.0-23-generic)](https://github.com/nemotiger/OS-Project2)<br>
