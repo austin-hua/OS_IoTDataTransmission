@@ -1,8 +1,11 @@
 # Project Report
 
 ## Design
-The entire framework runs on Linux's mmap (memory map) library. mmap is pretty much a function for allocating memory on the heap. It's called by C's malloc() function, for example. Cool stuff.<br>
-So the basic idea is, we're comparing the speed of mmap with normal file I/O.<br>
+The entire framework runs on Linux's mmap (memory map) library. mmap is pretty much a function for allocating memory on the heap. It's called by C's malloc() function, for example. Cool stuff. It is an essential system call for a variety of programming applications. <br>
+
+In this experiment, we converted the files provided in the sample code (file_in) to .in files. Our program is designed to read all '.in' files located in the ./data library. The corresponding '.out' file is generated upon data transmission.
+
+
 
 Master & Slave Description <br>
 #### Master
