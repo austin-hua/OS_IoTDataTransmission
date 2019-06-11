@@ -17,6 +17,10 @@ This kernel program is designed to receive data from the master device and trans
 
 ## Analysis
 
+Time is measured in ms.<br>
+f and m are file I/O and mmap, as they are referred to in the source code.<br>
+
+
 ### Dataset 1
  File Size|Master(f)|Slave (f)|Master(m)| Slave (m)
 |---------|---------|---------|---------|--------| 
