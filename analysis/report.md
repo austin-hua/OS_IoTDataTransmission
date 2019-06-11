@@ -30,6 +30,6 @@ This program is also being tested only on one computer, and the recorded times f
 
 ### Contributions
 B06902101 韓哈斯: Designed program architecture, researched mmap, wrote report.md<br>
-B06902098 李恩慈: <br>
-B06902086 柯燕玲: <br>
+B06902098 李恩慈: Wrote report<br>
+B06902086 柯燕玲: Wrote report<br>
 B05902099 曾彬輝: 
