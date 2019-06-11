@@ -1,4 +1,4 @@
-v# Project Report
+# Project Report
 
 ## Design
 The entire framework runs on Linux's mmap (memory map) library. mmap is pretty much a function for allocating memory on the heap. It's called by C's malloc() function, for example. Cool stuff. It is an essential system call for a variety of programming applications. <br>
