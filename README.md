@@ -50,7 +50,7 @@ This will be useful for testing in different environments. The three modules, sl
 [more mmap information](https://www.poftut.com/mmap-tutorial-with-examples-in-c-and-cpp-programming-languages/)<br>
 *Referenced repos*<br>
 [GaryChenMesser's repo (compatible with Linux 4.14.25-generic)](https://github.com/GaryChenMesser/os_project2_2018)<br>
-Acknowledgement: After running into several errors using multiple different implementations of mmap, we reviewed and based much of our current mmap implementation on the above implementation.
+Acknowledgement: After running into several errors using multiple different implementations of mmap, we reviewed and based much of our current mmap implementation on the above implementation.<br>
 [yccyenchicheng's repo](https://github.com/yccyenchicheng/os_project2_sp18)<br>
 [b05902046's repo](https://github.com/b05902046/OS-Project-2)<br>
 [nemotiger's repo (running Linux 4.15.0-23-generic)](https://github.com/nemotiger/OS-Project2)<br>
@@ -63,6 +63,7 @@ Acknowledgement: After running into several errors using multiple different impl
 [B06902086 柯燕玲](https://github.com/swallow26) <br>
 [B05902099 曾彬輝](https://github.com/navenoc13)
 
+-----------
 ### TODO
 <p>
 Add sample source code and base files [✓]<br>
