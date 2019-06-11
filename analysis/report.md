@@ -5,8 +5,6 @@ The entire framework runs on Linux's mmap (memory map) library. mmap is pretty m
 
 In this experiment, we converted the files provided in the sample code (file_in) to .in files. Our program is designed to read all '.in' files located in the ./data library. The corresponding '.out' file is generated upon data transmission.
 
-
-
 ## Master & Slave Description
 Master/Slave is a model of communication where the Master process has control over the Slave process(es). 
 #### Master
@@ -16,11 +14,9 @@ This kernel program is designed to accept user program received and send it to t
 This kernel program is designed to receive data from the master device and transmit it to the user program. This program will only be executed after both slave_device and master_device are loaded. The slave program is responsible for setting the master IP address to connect to. The slave device will receive data from the master device, which in turn will return this data to the slave program.
 
 ## Analysis
-
 Time is measured in ms.<br>
 f and m are file I/O and mmap, as they are referred to in the source code.<br>
 File size is measured in bytes. As specified in the source code, PAGE_SIZE is 4096 bytes or 4 kb.
-
 
 ### Dataset 1
 |File size (in bytes, sample input, .in extension)|Master (method f)|Slave (method f)|Master (method m)|Slave (method m)|
@@ -71,7 +67,7 @@ We have tried finding a consistently reliable method for unloading modules, incl
 This program is also being tested only on one computer, and the recorded times for this analysis are resultingly skewed. Results may be completely different on different devices, with variables such as LAN and internet speeds, different versions of Ubuntu kernels, a more advanced computer processor, etc. If the objective is to find accurate results in the Internet of Things regarding file I/O and socket speed differences, other IOT devices such as phones, smart watches and embedded systems may be tested as well.
 
 ### Contributions
-B06902101 韓哈斯: Designed program architecture, researched mmap, wrote report.md
-B06902098 李恩慈: Wrote report
-B06902086 柯燕玲: Wrote report
+B06902101 韓哈斯: Designed program architecture, researched mmap, wrote report.md<br>
+B06902098 李恩慈: Wrote report<br>
+B06902086 柯燕玲: Wrote report<br>
 B05902099 曾彬輝: 
