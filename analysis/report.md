@@ -60,6 +60,8 @@ File size is measured in bytes. As specified in the source code, PAGE_SIZE is 40
 |1502860                                          |8.3034           |10.2201         |5.9214           |11.5755         |
 |577                                              |0.1475           |0.308           |0.8359           |0.3627          |
 
+For small data transfer, read(), write() and related I/O system calls may have better speed due to mmap's large overhead for a single operation in kernel access. For larger data transfer and in the case of frequent editing of the same file, mmap's speed increase may be significant. This is due to mmap's capability of reducing the number of copies of data made.<br>
+
 ## Weaknesses in This Analysis
 We have tried finding a consistently reliable method for unloading modules, including the provided sample code version as well as several other methods. Mutual module dependency for ksocket and master_device have made it difficult to have 100% success, however, even with the risky *rmmod -f* command. If these modules can't be unloaded, rebooting Ubuntu is the fallback.
 
