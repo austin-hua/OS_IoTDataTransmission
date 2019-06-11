@@ -57,7 +57,7 @@ int main (int argc, char* argv[])
 		return 1;
 	}
 
-	char *mmapper;
+	char *kernel_address;
 
 	switch(method[0]) {
 		case 'f': //file I/O
@@ -70,13 +70,13 @@ int main (int argc, char* argv[])
 		default: //mmap
 			//void *mmap(void *addr, size_t length, int prot, int flags, int fd, off_t offset);
 			//can use map_shared or map_private
-			mmapper = mmap(NULL, file_size, PROT_READ, MAP_SHARED, file_fd, 0);
+			kernel_address = mmap(NULL, file_size, PROT_READ, MAP_SHARED, file_fd, 0);
 			/*
 			On success, mmap() returns a pointer to the mapped area.  On error,
 	       	the value MAP_FAILED (that is, (void *) -1) is returned, and errno is
 	       	set to indicate the cause of the error.
 	       	*/
-			if(mmapper == MAP_FAILED) {
+			if(kernel_address == MAP_FAILED) {
 				perror("mmap creation failed\n");
 				return -1;
 			}
@@ -84,7 +84,7 @@ int main (int argc, char* argv[])
 			int data_size = file_size;
 			//ssize_t write(int fd, const void *buf, size_t count);
 			do {
-				int write_location = mmapper + file_size - ret;
+				int write_location = kernel_address + file_size - ret;
 				if(data_size >= BUF_SIZE) {
 					write(dev_fd, write_location, BUF_SIZE);
 				} else {
@@ -94,7 +94,7 @@ int main (int argc, char* argv[])
 			} while(ret > 0); //end of file
 
 			//int munmap(void *addr, size_t length);
-			if(munmap(mmapper, file_size) == -1) {
+			if(munmap(kernel_address, file_size) == -1) {
 				perror("unmapping failed\n");
 				return -1;
 			}
