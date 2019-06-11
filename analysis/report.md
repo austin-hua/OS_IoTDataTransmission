@@ -8,6 +8,7 @@ In this experiment, we converted the files provided in the sample code (file_in)
 
 
 Master & Slave Description <br>
+Master/Slave is a model of communication where the Master process has control over the Slave process(es). <br>
 #### Master
 This kernel program is designed to accept user program received and send it to the master device. The master program will be loaded after the master_module is loaded.
 
