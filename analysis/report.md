@@ -19,6 +19,7 @@ This kernel program is designed to receive data from the master device and trans
 
 Time is measured in ms.<br>
 f and m are file I/O and mmap, as they are referred to in the source code.<br>
+File size is measured in bytes. As specified in the source code, PAGE_SIZE is 4096 bytes or 4 kb.
 
 
 ### Dataset 1
