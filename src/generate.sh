@@ -1,4 +1,5 @@
 if [[ $1 = f ]]
+then
 	func = f
 else 
 	func = m

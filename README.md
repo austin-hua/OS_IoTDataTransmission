@@ -64,8 +64,17 @@ This will be useful for testing in different environments. The three modules, sl
 
 ### TODO
 <p>
-  Add sample source code and base files [✓]<br>
-  Test source code [✓]<br>
-  Research mmap [✓]<br>
-  Functional prototype [ ]<br>
+Add sample source code and base files [✓]<br>
+Test source code [✓]<br>
+Research mmap [✓]<br>
+Architecture
+	ksocket functional [✓]
+	master_device.c functional []
+	slave_device.c functional []
+	master.c functional []
+	slave.c functional []
+
+	clean.sh functional []
+	removeModules.sh functional []
+	generate.sh functional []
 </p>

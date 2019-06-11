@@ -20,8 +20,8 @@ int main (int argc, char* argv[])
 {
 	char buf[BUF_SIZE];
 	int i, dev_fd, file_fd;// the fd for the device and the fd for the input file
-	size_t ret, file_size = 0, data_size = -1;
-	char file_name[50];
+	size_t ret, file_size = 0, data_size = -1, offset = 0;
+	char file_name[50];a
 	char method[20];
 	char ip[20];
 	struct timeval start;
