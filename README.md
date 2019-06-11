@@ -68,14 +68,13 @@ Add sample source code and base files [✓]<br>
 Test source code [✓]<br>
 Research mmap [✓]<br>
 Architecture
-	ksocket functional [✓]
-	master_device.c functional [✓]
-	slave_device.c functional [✓]
-	master.c functional []
-	slave.c functional []
-
-	clean.sh functional [✓]
-	removeModules.sh functional [✓]
-	compile.sh functional [✓]
-	generate.sh functional [✓]
+- ksocket functional [✓]
+- master_device.c functional [✓]
+- slave_device.c functional [✓]
+- master.c functional [✓]
+- slave.c functional [✓]
+- clean.sh functional [✓]
+- removeModules.sh functional [✓]
+- compile.sh functional [✓]
+- generate.sh functional [✓]
 </p>
