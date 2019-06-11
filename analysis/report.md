@@ -15,6 +15,8 @@ This kernel program is designed to accept user program received and send it to t
 This kernel program is designed to receive data from the master device and transmit it to the user program. This program will only be executed after both slave_device and master_device are loaded. The slave program is responsible for setting the master IP address to connect to. The slave device will receive data from the master device, which in turn will return this data to the slave program.
 
 ## Analysis
+
+Dataset 1
  File Size|Master(f)|Slave (f)|Master(m)| Slave (m)
 |---------|---------|---------|---------|--------| 
 | 4       | 0.618   | 0.32    | 0.0742  | 0.0519 | 
@@ -22,13 +24,15 @@ This kernel program is designed to receive data from the master device and trans
 | 1502860 | 13.7193 | 13.7708 | 5.0837  | 4.7855 | 
 | 577     | 18.9267 | 18.76   | 0.1427  | 0.0399 | 
 
-|                                                   |                   |                  |                   |                  | 
+Dataset 2
+
 |---------------------------------------------------|-------------------|------------------|-------------------|------------------| 
 | File size (in bytes, sample input, .in extension) | Master (method f) | Slave (method f) | Master (method m) | Slave (method m) | 
 | 4                                                 | 0.3081            | 0.22             | 0.1369            | 0.0547           | 
 | 9695                                              | 0.08              | 0.2076           | 0.1649            | 0.1853           | 
 | 1502860                                           | 4.3947            | 5.6345           | 2.7322            | 8.815            | 
 | 577                                               | 0.3103            | 0.2322           | 0.8319            | 0.0502           | 
+
 
 
 ## Weaknesses in This Analysis
