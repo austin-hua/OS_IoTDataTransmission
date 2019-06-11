@@ -68,10 +68,10 @@ File size is measured in bytes. As specified in the source code, PAGE_SIZE is 40
 ## Weaknesses in This Analysis
 We have tried finding a consistently reliable method for unloading modules, including the provided sample code version as well as several other methods. Mutual module dependency for ksocket and master_device have made it difficult to have 100% success, however, even with the risky *rmmod -f* command. If these modules can't be unloaded, rebooting Ubuntu is the fallback.
 
-This program is also being tested only on one computer, and the recorded times for this analysis are resultingly skewed. Results may be completely different on different devices, with variables such as LAN and internet speeds, different versions of Ubuntu kernels, more advanced computer processor, etc. If the objective is to find accurate results in the Internet of Things regarding file I/O and socket speed differences, other IOT devices such as phones, smart watches and embedded systems may be tested as well.
+This program is also being tested only on one computer, and the recorded times for this analysis are resultingly skewed. Results may be completely different on different devices, with variables such as LAN and internet speeds, different versions of Ubuntu kernels, a more advanced computer processor, etc. If the objective is to find accurate results in the Internet of Things regarding file I/O and socket speed differences, other IOT devices such as phones, smart watches and embedded systems may be tested as well.
 
 ### Contributions
-B06902101 韓哈斯: Designed program architecture, researched mmap, wrote report.md<br>
-B06902098 李恩慈: Wrote report<br>
-B06902086 柯燕玲: Wrote report<br>
+B06902101 韓哈斯: Designed program architecture, researched mmap, wrote report.md
+B06902098 李恩慈: Wrote report
+B06902086 柯燕玲: Wrote report
 B05902099 曾彬輝: 
