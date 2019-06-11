@@ -67,14 +67,15 @@ This will be useful for testing in different environments. The three modules, sl
 Add sample source code and base files [✓]<br>
 Test source code [✓]<br>
 Research mmap [✓]<br>
-Architecture
-- ksocket functional [✓]
-- master_device.c functional [✓]
-- slave_device.c functional [✓]
-- master.c functional [✓]
-- slave.c functional [✓]
-- clean.sh functional [✓]
-- removeModules.sh functional [✓]
-- compile.sh functional [✓]
-- generate.sh functional [✓]
+  
+*Architecture*
+ksocket functional [✓]<br>
+master_device.c functional [✓]<br>
+slave_device.c functional [✓]<br>
+master.c functional [✓]<br>
+slave.c functional [✓]<br>
+clean.sh functional [✓]<br>
+removeModules.sh functional [✓]<br>
+compile.sh functional [✓]<br>
+generate.sh functional [✓]
 </p>
